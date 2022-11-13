@@ -17,7 +17,16 @@
     <title>API Email's</title>
 </head>
 <body>
-    
+
+    <div id="app" class="container py-5">
+        <ul>
+            <li v-if="isLoaded" v-for="email in emails">{{email}}</li>
+            <div v-else>
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </ul>
+    </div>
+
     <script src="js/app.js"></script>
 </body>
 </html>
