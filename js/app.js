@@ -9,7 +9,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
-            emails: ['','','','','','','','','','',],
+            emails: [],
             apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
             isLoaded: false
         }
@@ -17,10 +17,10 @@ createApp({
     methods:{
         getApi(){
             this.isLoaded = false;
-            for(let i = 0; i < this.emails.length; i++){
+            for(let i = 0; i <= 10; i++){
                 axios.get(this.apiUrl)
                 .then( result =>{
-                    this.emails[i] = result.data.response;
+                    this.emails.push(result.data.response)
                     console.log(this.emails);
                     this.isLoaded = true;
                     
